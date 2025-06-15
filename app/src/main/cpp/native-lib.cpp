@@ -58,7 +58,7 @@ Java_com_example_edgedetectionviewer_GLRenderer_updateTextureFromFrame(
     cv::Mat edgeRgb;
     cv::cvtColor(edges, edgeRgb, cv::COLOR_GRAY2RGB);
 
-    /
+
     glBindTexture(GL_TEXTURE_2D, textureId);
     glTexImage2D(GL_TEXTURE_2D,
                  0,
