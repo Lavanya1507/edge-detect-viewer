@@ -40,11 +40,11 @@ static {
     System.loadLibrary("opencv_java4");
     System.loadLibrary("edgedetectionviewer");
 }
+```
 
 
-
-Architecture Overview-
-Frame Flow:
+## Architecture Overview-
+# Frame Flow:
 1.OpenCV captures frames using JavaCameraView
 
 2.Frame passed to GLRenderer.updateFrame(Mat)
@@ -53,7 +53,7 @@ Frame Flow:
 
 4.Processed frame is uploaded as a texture using OpenGL ES and drawn in GLSurfaceView
 
-Components:
+# Components:
 1.MainActivity.java: handles camera input and OpenCV initialization
 
 2.GLRenderer.java: OpenGL logic for rendering frames
@@ -62,7 +62,7 @@ Components:
 
 4.CMakeLists.txt: builds native code using NDK
 
-About This Project-
+## About This Project-
 This project was built as part of a technical assessment — and it's extra special because when I started, I had little to no prior experience with the core technologies involved.
 
 In just about two and a half days, I went from unfamiliarity to comfortably working with:
