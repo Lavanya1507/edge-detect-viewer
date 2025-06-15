@@ -61,3 +61,21 @@ Components:
 3.native-lib.cpp: C++ logic for edge detection + OpenGL texture updates
 
 4.CMakeLists.txt: builds native code using NDK
+
+About This Project-
+This project was built as part of a technical assessment — and it's extra special because when I started, I had little to no prior experience with the core technologies involved.
+
+In just about two and a half days, I went from unfamiliarity to comfortably working with:
+
+OpenCV (C++) for real-time edge detection
+
+JNI to bridge native C++ with Android
+
+OpenGL ES for rendering processed frames
+
+And built the whole thing into an Android app using Android Studio
+
+The learning curve was steep, but with consistent effort and late-night debugging sessions, I not only understood the concepts but also got them working together in one functional project.
+While the final product isn't perfect, it is result of curiosity and growth and i will continue to make upadtes until it is in a viable working condition.
+
+
