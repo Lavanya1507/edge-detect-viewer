@@ -15,9 +15,9 @@ This a real-time Android app that captures camera frames, detects edges using Op
 ---
 
 ##  Screenshots
-![UI Preview1](AppScreenshots/UiPreview1)
-![UI Preview2](AppScreenshots/UiPreview2)
-![UI Preview3](AppScreenshots/UiPreview3)
+![UI Preview1](AppScreenshots/UiPreview1.jpg)
+![UI Preview2](AppScreenshots/UiPreview2.jpg)
+![UI Preview3](AppScreenshots/UiPreview3.jpg)
 
 ---
 
