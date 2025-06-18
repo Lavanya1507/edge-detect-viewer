@@ -43,9 +43,9 @@ Java_com_example_edgedetectionviewer_GLRenderer_updateTextureFromFrame(
         jint textureId) {
 
     cv::Mat &input = *(cv::Mat *) matAddrInput;
-
+    //app crashing on different devices so cheks added to fix it, worked just fine on original device.
     if (input.empty()) {
-        LOGD(" Skipping: input Mat is empty.");
+        LOGD(" Skip: input Mat is empty.");
         return;
     }
 
@@ -53,7 +53,7 @@ Java_com_example_edgedetectionviewer_GLRenderer_updateTextureFromFrame(
         LOGD(" Invalid input size: %d x %d", input.cols, input.rows);
         return;
     }
-
+    //we want pixel format to be rgba(cv_8uc4)
     if (input.type() != CV_8UC4) {
         LOGD(" Invalid input type: expected CV_8UC4, got type=%d", input.type());
         return;
@@ -61,6 +61,7 @@ Java_com_example_edgedetectionviewer_GLRenderer_updateTextureFromFrame(
 
 
     cv::Mat gray,edges;
+    //converting to grayscale and applying canny
     try {
         LOGD(" All checks passed. Calling cvtColor.");
         cv::cvtColor(input, gray, cv::COLOR_RGBA2GRAY);

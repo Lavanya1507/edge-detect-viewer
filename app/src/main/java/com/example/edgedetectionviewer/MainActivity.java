@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     public native String stringFromJNI();
 
     @Override
+    //100 is camera request code + sometimes grantResults are empty
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 100 && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
         return rgba;
     }
-
+    //these are to release resources: to not cause memory leaks
     @Override
     protected void onPause() {
         super.onPause();

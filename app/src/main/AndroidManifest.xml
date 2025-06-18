@@ -5,7 +5,7 @@
     <!-- Camera permission -->
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <!-- Declare camera usage (so Play Store knows) -->
+    <!-- but can work without it as well. to avoid crashes -->
     <uses-feature android:name="android.hardware.camera" android:required="false" />
 
     <application
