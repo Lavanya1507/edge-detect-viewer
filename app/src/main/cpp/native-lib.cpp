@@ -45,13 +45,29 @@ Java_com_example_edgedetectionviewer_GLRenderer_updateTextureFromFrame(
     cv::Mat &input = *(cv::Mat *) matAddrInput;
 
     if (input.empty()) {
-        LOGD("Empty input frame, skipping texture update.");
+        LOGD(" Skipping: input Mat is empty.");
+        return;
+    }
+
+    if (input.cols <= 0 || input.rows <= 0) {
+        LOGD(" Invalid input size: %d x %d", input.cols, input.rows);
+        return;
+    }
+
+    if (input.type() != CV_8UC4) {
+        LOGD(" Invalid input type: expected CV_8UC4, got type=%d", input.type());
         return;
     }
 
 
-    cv::Mat gray, edges;
-    cv::cvtColor(input, gray, cv::COLOR_RGBA2GRAY);
+    cv::Mat gray,edges;
+    try {
+        LOGD(" All checks passed. Calling cvtColor.");
+        cv::cvtColor(input, gray, cv::COLOR_RGBA2GRAY);
+    } catch (cv::Exception &e) {
+        LOGD(" cv::cvtColor threw an exception: %s", e.what());
+        return;
+    }
     cv::Canny(gray, edges, 50, 150);
 
 
